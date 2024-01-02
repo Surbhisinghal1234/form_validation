@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="has_attribute.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div id="back_img">
+
+<div class="box">
+    <h1 class="heading">Login</h1>
+    <!-- <form action="" method="post" id="loginForm"> -->
+        <form action=""  onsubmit="return myform()">
+        <label for="">Username</label>
+        <input type="text" id="input_one" value="">
+
+        <label for="">Password</label>
+        <input type="password" id="input_two" value=""> 
+
+        <p id="show"></p>
+
+        <label for="">Confirm password</label>
+        <input type="password" id="input_three" value="">
+
+       <button id="btn" >Submit</button>
+    </form>
+
+</div>
+
+</div>
+
+    <script>
+    // const loginForm=document.querySelector("#loginForm")
+    // loginForm.addEventListener("submit",myform);
+     function myform()
+     {
+
+        var pass=document.getElementById('input_two').value;
+
+        var connfirm=document.getElementById('input_three').value;
+        let para= document.querySelector("#show")
+
+        if(pass=="")
+        {
+            para.innerHTML='password is required'
+           // alert('password is required');
+            return false;
+        }
+
+        else if(pass.length<4){
+            para.innerHTML='password is too short'
+            return false;
+
+        }
+        else if(pass.length!=connfirm.length){
+            para.innerHTML='password did not match'
+            return false;
+
+        }
+        else{
+           // alert('Submit');
+           // para.innerHTML='Submit'
+            window.location="has_attribute_new.html"
+            return false;
+
+        }
+     }   
+
+
+// const myButton = document.getElementById("myBtn");
+// let answer = myButton.hasAttribute("onclick");
+// console.log(answer)
+
+
+    </script>
+    
+</body>
+</html>
